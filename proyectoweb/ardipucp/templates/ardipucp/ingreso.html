@@ -18,14 +18,14 @@
                     <br>
                 </div>
             </div>
-            <h5>Login</h5>
+            <h5>ARDI-PUCP</h5>
             <form method="post" action="{% url 'ardipucp:index'%}"> 
             {% csrf_token %} <!-- para extraer información de manera segura desde el browser al servidor-->
                 <input class = "controls" type="text" name="usuario" value="" placeholder="Usuario"> <!-- Se crea un casillero para ingresar el nombre del usuario  -->
                 <input class = "controls" type="password" name="contrasena" value="" placeholder="Contraseña"> <!-- Se crea un casillero para ingresar la contraseña del usuario  -->
                 <button class = "buttons"  type="submit">Ingresar</button> <!-- Se crea un boton para ingresar a la vista de dashboard  -->
             </form>
-            <p>¿Olvidaste tu Contraseña?</p>
+            <p>¿Olvidaste tu contraseña?</p>
         </section>
     </body>
 </html>

@@ -1,1 +1,61 @@
-Hola
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dashboard</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ardipucp/estilos.css'%}">
+    <!-- CUSTOM JS -->
+    <script src="{% static 'ardipucp/app.js'%}" defer></script>
+</head>
+<body>
+
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            <div class="logo">
+                <img src="{% static 'ardipucp/JVicon.png' %}">
+                <span>Juan Valdez</span>
+            </div>
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <!-- INPUT SEARCH -->
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Buscar">
+        </div>
+        <!-- MENU -->
+        <div class="menu">
+            <div class="enlace">
+                <i class='bx bxs-calendar-check' ></i>
+                <span>Stock</span>
+            </div>
+
+
+            <div class="enlace">
+                <i class='bx bx-bar-chart'></i>
+                <span>Analíticas</span>
+            </div>
+
+            <div class="enlace">
+                <i class='bx bxs-customize' ></i>
+                <span>Promociones</span>
+            </div>
+
+
+            <div class="enlace">
+                <i class="bx bx-cog"></i>
+                <span>Configuración</span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
