@@ -22,4 +22,7 @@ def index(request):
         return render(request,"ardipucp/ingreso.html") # Caso contrario retorna la vista de login 
 
 def dashboard(request):
-    return render(request,"ardipucp/dashboard.html")
+    usuarios_totales = usuario.objects.all()
+    return render(request,"ardipucp/dashboard.html",{
+        'usuarios_totales': usuarios_totales
+    })
