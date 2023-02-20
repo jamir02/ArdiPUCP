@@ -37,10 +37,8 @@
                 <a href="{% url 'ardipucp:analiticas'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
                     Analíticas</a>
 
-                <a href="{% url 'ardipucp:promociones'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                <a href="{% url 'ardipucp:promociones_1'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
                     Promociones</a>
-                <a href="{% url 'ardipucp:configuracion'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-settings lead mr-2"></i>
-                    Configuración</a>
                 
                 <br>
                 <br>
@@ -54,8 +52,6 @@
                 <br>
                 <a href="{% url 'ardipucp:añade_producto' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-add-circle-outline lead mr-2"></i>
                     Añadir producto</a>
-                <a href="{% url 'ardipucp:edita_stock' %}" class="d-block text-light p-3 border-0"><i class="icon ion-md-create lead mr-2"></i>
-                    Edita stock</a>
             </div>
         </div>
 
@@ -86,7 +82,6 @@
                             {% endfor %}
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item">Mi perfil</a>
-                                <a class="dropdown-item">Suscripciones</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item">Cerrar sesión</a>
                             </div>
@@ -129,6 +124,7 @@
                                                         <th>Imagen</th>
                                                         <th>Precio (S/.)</th>
                                                         <th>Stock</th>
+                                                        <th>Ver producto</th>
                                                         <th>Eliminar producto</th>
                                                     </tr>
                                                 </thead>
@@ -142,6 +138,9 @@
                                                         </td>
                                                         <td>{{productos.precio}}</td>
                                                         <td>{{productos.stock}}</td>
+                                                        <td>
+                                                            <a class="btn btn-success" href="{% url 'ardipucp:vista_producto' productos.id %}">Editar stock</a><!-- Boton para ver la tarea -->
+                                                        </td>
                                                         <td>
                                                             <a class="btn btn-danger" href="{% url 'ardipucp:eliminar_producto' productos.id %}" >Eliminar</a> <!-- Boton para eliminar la tarea -->
                                                         </td>

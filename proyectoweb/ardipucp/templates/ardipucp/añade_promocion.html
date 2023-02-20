@@ -37,10 +37,9 @@
                 <a href="{% url 'ardipucp:analiticas'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
                     Analíticas</a>
 
-                <a href="{% url 'ardipucp:promociones'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                <a href="{% url 'ardipucp:promociones_1'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
                     Promociones</a>
-                <a href="{% url 'ardipucp:configuracion'%}" class="d-block text-light p-3 border-0"><i class="icon ion-md-settings lead mr-2"></i>
-                    Configuración</a>
+                
             </div>
         </div>
 
@@ -71,7 +70,6 @@
                             {% endfor %}
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item">Mi perfil</a>
-                                <a class="dropdown-item">Suscripciones</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item">Cerrar sesión</a>
                             </div>
@@ -81,7 +79,6 @@
                 </div>
             </nav>
         
-
         <!-- Page Content -->
         <div id="content" class="bg-grey w-100">
 
@@ -89,16 +86,60 @@
                 <div class="container">
                  <div class="row">
                         <div class="col-lg-9 col-md-8">
-                            <h1 class="font-weight-bold mb-0">Configura tu cuenta</h1>
-                             <p class="lead text-muted">Actualiza tu información</p>
+                            {%for usuario in usuarios_totales %}
+                            <h1 class="font-weight-bold mb-0">Promociones de {{usuario.nombre}}</h1>
+                            {% endfor %}
+                             <p class="lead text-muted">Añade nuevas promociones</p>
                         </div>
                     </div>
                 </div>
             </section>
-        </div>
+            
+            <section class="bg-mix py-3">
+                <div class="container">
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <div class="row">
+                               <!--  <div class="col-lg-3 col-md-6 d-flex stat my-3"> --> 
+                                    <div class="mx-auto" style="width: 1200px">
+                                        <div>
+                                            <form method="post" action="{%url 'ardipucp:añade_promocion'%}"> <!-- Se crea un formulario para que el usuario introduzca toda la información para crear y asignar una tarea nueva -->
+                                                {% csrf_token %} <!-- para extraer información de manera segura desde el browser al servidor-->
+                                                <div class = "input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Ingresa el nombre del producto" aria-label="Ingresa el nombre del producto" aria-describedby="basic-addon2" name="nombreproducto">
+                                                </div>
+                                                <div class = "input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Ingresa el nombre de la promoción" aria-label="Ingresa el nombre de la promoción" aria-describedby="basic-addon2" name="nombrepromo">
+                                                </div>
+                                                <div class = "input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Ingresa el tipo de promoción" aria-label="Ingresa el tipo de promoción" aria-describedby="basic-addon2" name="tipopromo">
+                                                </div>
+                                                <div class = "input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Ingresa el grupo de usuarios" aria-label="Ingresa el grupo de usuarios" aria-describedby="basic-addon2" name="grupousuario">
+                                                </div>
+                                                <div class = "input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Ingresa el precio (S/.)" aria-label="Ingresa el precio (S/.)" aria-describedby="basic-addon2" name="preciopromo">
+                                                </div>
+                                                <div class = "input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Ingresa la duración de la promoción" aria-label="Ingresa la duración de la promoción" aria-describedby="basic-addon2" name="duraciónpromo">
+                                                </div>
+                                                <br>
+                                               <!-- <a class="btn btn-success" href="{% url 'ardipucp:promociones_1' %}">Añadir promoción</a> Boton para añadir una tarea -->
+                                                <button type="submit" class="btn btn-primary" href="{% url 'ardipucp:promociones_1' %}">Añadir promoción</a><!-- Boton para añadir una tarea -->
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
         </div>
-    
+
+
+
+        </div>
 
 
     </div>

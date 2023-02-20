@@ -14,3 +14,11 @@ class productos(models.Model):
     precio = models.CharField(max_length=64, default='')
     stock = models.CharField(max_length=64, default='')
     descripcion = models.CharField(max_length=200, default='')
+
+class promociones(models.Model):
+    producto = models.CharField(max_length=64, default='')
+    nombre = models.CharField(max_length=100, default='')
+    tipo = models.CharField(max_length=64, default='')
+    condición = models.CharField(max_length=64, default='')
+    precio = models.CharField(max_length=64, default='')
+    duración = models.CharField(max_length=100, default='')
